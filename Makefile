@@ -1,10 +1,10 @@
-all: exercise
+default: exercise naive
 
-test: exercise
+test: exercise naive
 	@./test.sh
 
 %.o: %.c
-	$(CC) -c -o $@
+	$(CC) -c -o $@ -g
 
 clean:
 	rm exercise
