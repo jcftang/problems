@@ -35,11 +35,10 @@ int recursive_calculate_sum(int input[SARRAY], int target, int remaining[SARRAY]
 	// build up array for recursive function - bug here with setting
 	// up array, initial array is all set to zero
 	for (i=0; i < SARRAY ; i++) {
-		tmp = input[i];
 		for (j = i + 1; j < SARRAY; j++ ) {
 			tmp_remaining[j - 1] = input[j];
 		}
-		tmp_array[i] = tmp;
+		tmp_array[i] = input[i];
 		recursive_calculate_sum(tmp_remaining, target, tmp_array);
 	} 
 }
